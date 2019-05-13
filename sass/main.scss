@@ -1,0 +1,42 @@
+
+
+.principal {
+    width: 25%;
+    margin: 0 auto;
+    color: black;
+    font-size: 24px;
+}
+
+#notaInput {
+    display: block;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.form {
+    float: left;
+    display: none;
+}
+
+.list {
+    float: left;
+    margin-right: 40px;
+}
+
+.lista li a {
+    text-decoration: none;
+    color: black;
+}
+
+#close {
+    display: none;
+    margin-left: 50px;
+}
+
+#textNote {
+    margin-right: 50px;
+}
