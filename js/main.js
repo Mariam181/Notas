@@ -32,6 +32,7 @@
 			nuevaNota = document.createElement("li"),
 			enlace = document.createElement("a"),
 			contenido = document.createTextNode(nota);
+			btnDelete = document.createElement("button");
 
 		if (nota === "") {
 			notaInput.setAttribute("placeholder", "Agrega una nota valida");
@@ -46,15 +47,20 @@
 		// Agrergamos el enlace (a) a la nueva nota (li)
 		nuevaNota.appendChild(enlace);
 		// Agregamos la nueva nota a la lista
+		btnDelete.setAttribute("id", "deleteButton");
+		nuevaNota.appendChild(btnDelete);
 		lista.appendChild(nuevaNota);
+		
 
 		notaInput.value = "";
 
-		for (var i = 0; i <= lista.children.length -1; i++) {
+		/*for (var i = 0; i <= lista.children.length -1; i++) {
 			lista.children[i].addEventListener("click", function(){
 				this.parentNode.removeChild(this);
 			});
-		}
+		}*/
+		
+
 		
 
 	};
@@ -63,17 +69,19 @@
 		teareaInput.setAttribute("placeholder", "Agrega tu nota");
 	};
 
-	/*var eliminarNota = function(){
-		this.parentNode.removeChild(this);
-	};*/
-
-
-
 	// Agregar Nota
 	btnNuevaNota.addEventListener("click", agregarNota);
 
 	// Comprobar Input
 	notaInput.addEventListener("click", comprobarInput);
+
+	//Reset
+	let resetForm = function(){
+		document.getElementById('formulario').reset();
+	}
+
+	let btnReset = document.getElementById('btn-reset');
+	btnReset.addEventListener("click", resetForm);
 
 	// Borrando Elementos de la lista
 	for (var i = 0; i <= lista.children.length -1; i++) {
@@ -88,4 +96,22 @@
 			contenidoTexto = document.createTextNode(texto);
 			nuevoTexto.appendChild(nuevoTexto);
 	}
+
+
+
+	//Prueba borrar
+	function myFunction() {
+		var txt;
+		var r = confirm("Are you sure you want to delete?");
+		if (r == true) {
+			txt = "You pressed OK!";
+		} else {
+			txt = "You pressed Cancel!";
+		}
+		document.getElementById("demo").innerHTML = txt;
+	}
+
+	let borrar = document.getElementById("deleteButton");
+	borrar.addEventListener("click", myFunction);
+	
 }());
