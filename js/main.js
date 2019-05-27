@@ -54,19 +54,19 @@
 
 		notaInput.value = "";
 
+		cerrar();
+
 		/*for (var i = 0; i <= lista.children.length -1; i++) {
 			lista.children[i].addEventListener("click", function(){
 				this.parentNode.removeChild(this);
 			});
 		}*/
-		
-
-		
 
 	};
+
 	var comprobarInput = function(){
 		notaInput.className = "";
-		teareaInput.setAttribute("placeholder", "Agrega tu nota");
+		notaInput.setAttribute("placeholder", "Agrega tu nota");
 	};
 
 	// Agregar Nota
@@ -100,18 +100,14 @@
 
 
 	//Prueba borrar
-	function myFunction() {
-		var txt;
-		var r = confirm("Are you sure you want to delete?");
-		if (r == true) {
-			txt = "You pressed OK!";
-		} else {
-			txt = "You pressed Cancel!";
+	let list = document.getElementById('lista');
+	list.addEventListener('click', function(e) {
+		if (e.target) {
+			var r = confirm("Are you sure you want to delete?");
+			if (r == true) {
+				e.target.remove('li');
+			}
 		}
-		document.getElementById("demo").innerHTML = txt;
-	}
-
-	let borrar = document.getElementById("deleteButton");
-	borrar.addEventListener("click", myFunction);
+	}, false);
 	
 }());

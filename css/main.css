@@ -1,5 +1,5 @@
 .principal {
-  width: 25%;
+  width: 50%;
   margin: 0 auto;
   color: black;
   font-size: 24px; }
@@ -13,6 +13,7 @@
   display: table; }
 
 .form {
+  width: 80%;
   float: left;
   display: none; }
 
@@ -30,5 +31,10 @@
 
 #textNote {
   margin-right: 50px; }
+
+#deleteButton {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px; }
 
 /*# sourceMappingURL=main.css.map */
